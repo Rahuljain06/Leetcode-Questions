@@ -1,16 +1,14 @@
 class Solution:
     def minFlipsMonoIncr(self, s: str) -> int:
-        i=0
-        
-        n=len(s)
-        cnt0=s.count("0")
+        #on starting we ignore 0
+        cnt0=0
         cnt1=0
-        res=n-cnt0
-        for i in range(n):
-            if s[i]=="0":
-                cnt0-=1
-            elif s[i]=="1":
-                res=min(res,cnt0+cnt1)
+        for i in range(len(s)):
+            if s[i]=="1":
                 cnt1+=1
-        return res
+            elif cnt1>=1 and s[i]=="0":
+                cnt0+=1
+            if cnt0>cnt1:
+                cnt0=cnt1
+        return cnt0
             
