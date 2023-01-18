@@ -6,7 +6,7 @@ class Solution:
             while i:
                 d+=i%10
                 i//=10
-        return abs(t-d)
+        return (t-d)
                 
                 
             
