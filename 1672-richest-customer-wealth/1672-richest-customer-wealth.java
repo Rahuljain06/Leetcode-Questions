@@ -5,9 +5,8 @@ class Solution {
             int sum=0;
             for (int j=0; j<accounts[0].length;j++){
                 sum+=accounts[i][j];   
-            }if (count<sum){
-                count=sum;
-            }
+            }count=Math.max(sum,count);
+            
         }return count;
         
     }
