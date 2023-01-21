@@ -3,8 +3,8 @@ class Solution(object):
         rst = []
         self.backtrack(s, 0, '', rst)
         return rst
-    def backtrack(self,s, ct, path, rst):
-        if ct == 4:
+    def backtrack(self,s, dots, path, rst):
+        if dots == 4:
             #have 4 chunk and use up all digits
             if not s: rst.append(path[:-1]) 
             return
@@ -16,4 +16,4 @@ class Solution(object):
             if i > 1 and s[0] == '0': continue
             #take 3 digits, cannot greater than 255
             if i > 2 and int(s[:3]) > 255: continue
-            self.backtrack(s[i:], ct+1, path + s[:i] + '.', rst)
+            self.backtrack(s[i:], dots+1, path + s[:i] + '.', rst)
