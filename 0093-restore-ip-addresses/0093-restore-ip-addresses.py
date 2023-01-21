@@ -30,10 +30,12 @@ class Solution(object):
     
     def dfs(self, s, idx, path, res):
         if idx > 4:
-            return 
+            return
+        #have 4 chunk and all the digits are used than we append
         if idx == 4 and not s:
-            res.append(path[:-1])
+            res.append(path[:-1]) # we are excluding the 4 and last dot here"255.255.11.135."
             return 
         for i in range(1, len(s)+1):
+            # agr single 0 ke baad point . lag rha hai to thik hai par 0 ke baad koi no. hai or fir point . lag rha hai to galat hai 01. #cc: question
             if s[:i]=='0' or (s[0]!='0' and 0 < int(s[:i]) < 256):
                 self.dfs(s[i:], idx+1, path+s[:i]+".", res)      
