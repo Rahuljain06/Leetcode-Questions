@@ -1,7 +1,9 @@
 class Solution:
     def maximumCount(self, nums: List[int]) -> int:
-        if nums[0]>0 or nums[-1]<0:
+        if nums[0]>0 or nums[-1]<0 :
             return len(nums)
+        if set(nums)=={0}:
+            return 0
         s=0
         e=len(nums)-1
         neg=0
@@ -14,7 +16,7 @@ class Solution:
                 e=mid
         neg=e
         s=0
-        e=len(nums)
+        e=len(nums)-1
         while s<e:
             mid=(s+e)//2
             if nums[mid]>0:
