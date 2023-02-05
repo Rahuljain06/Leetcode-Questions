@@ -8,16 +8,13 @@ class Solution:
             a[ord(s2[i])-ord("a")]-=1
         if a==[0]*26:
             return True
-        print(a)
         for i in range(len(s1),len(s2)):
             a[ord(s2[i-len(s1)])-ord("a")]+=1
             a[ord(s2[i])-ord("a")]-=1
-            
             if a==[0]*26:
-                return True
-            
-        else:
-            return False
+                return True  
+        
+        return False
         
          
             
