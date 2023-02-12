@@ -12,7 +12,7 @@ class Solution:
                 s=mid+1
             else:
                 e=mid
-        neg=e
+        neg=s
         s=0
         e=len(nums)
         while s<e:
