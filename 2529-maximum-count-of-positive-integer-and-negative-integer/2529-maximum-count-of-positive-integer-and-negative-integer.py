@@ -21,7 +21,7 @@ class Solution:
                 e=mid
             else:
                 s=mid+1
-        pos=len(nums)-e
+        pos=len(nums)-s
        
         return max(pos,neg)
             
