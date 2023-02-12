@@ -16,7 +16,7 @@ class Solution:
                 e=mid
         neg=e
         s=0
-        e=len(nums)-1
+        e=len(nums)
         while s<e:
             mid=(s+e)//2
             if nums[mid]>0:
