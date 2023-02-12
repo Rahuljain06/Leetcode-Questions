@@ -23,7 +23,6 @@ class Solution:
                 e=mid
             else:
                 s=mid+1
-    
         pos=len(nums)-e
        
         return max(pos,neg)
