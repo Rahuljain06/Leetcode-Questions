@@ -2,8 +2,7 @@ class Solution:
     def maximumCount(self, nums: List[int]) -> int:
         if nums[0]>0 or nums[-1]<0 :
             return len(nums)
-        if set(nums)=={0}:  #(0,0,0,0,0,0,0) for this type of input
-            return 0
+        
         s=0
         e=len(nums)-1
         neg=0
