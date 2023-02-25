@@ -14,7 +14,7 @@ class Solution:
             return 0
         if x==1:
             return 1
-        left, right = 0, x
+        left, right = 1, x
         while left < right:
             mid = left + (right - left) // 2
             if mid * mid <= x:
