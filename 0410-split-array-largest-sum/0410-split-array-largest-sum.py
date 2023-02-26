@@ -1,16 +1,22 @@
 class Solution:
     def splitArray(self, nums: List[int], m: int) -> int:
-        lo, hi = max(nums), sum(nums)
-        while lo < hi:
-            mid = (lo+hi)//2
-            tot, cnt = 0, 1
+        def feasible(capacity) -> bool:
+            days = 1
+            total = 0
             for num in nums:
-                if tot+num<=mid: 
-                    tot += num
-                else:
-                    tot = num
-                    cnt += 1
-            if cnt>m: lo = mid+1
-            else: hi = mid
-        return hi
-        
+                total += num
+                if total > capacity:  # too heavy, wait for the next day
+                    total = num
+                    days += 1
+                    if days > m:  # cannot ship within D days
+                        return False
+            return True
+
+        left, right = max(nums), sum(nums)
+        while left < right:
+            mid = left + (right - left) // 2
+            if feasible(mid):
+                right = mid
+            else:
+                left = mid + 1
+        return left
