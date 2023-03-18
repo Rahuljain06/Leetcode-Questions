@@ -4,7 +4,7 @@ class Solution:
         while i < len(nums1) and j < len(nums2):
             if nums1[i] == nums2[j]:
                 return nums1[i]
-            if nums1[i] < nums2[j]:
+            elif nums1[i] < nums2[j]:
                 i += 1
             else:
                 j += 1
