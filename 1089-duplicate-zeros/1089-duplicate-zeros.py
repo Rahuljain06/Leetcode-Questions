@@ -9,7 +9,7 @@ class Solution:
         
         i = len(nums) - 1
         j = nlen - 1
-        while i<j:
+        while i!=j:
             if j < len(nums):
                 nums[j] = nums[i]
             j-=1
