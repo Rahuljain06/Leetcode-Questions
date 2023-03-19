@@ -4,11 +4,11 @@ class Solution:
         Do not return anything, modify arr in-place instead.
         """
         n = len(arr)
-        cntZero = arr.count(0)
-        newLen = n + cntZero 
+        zeros = arr.count(0)
+        nlen = n + zeros
         
         i = n - 1
-        j = newLen - 1
+        j = nlen - 1
         while i!=j:
             if j < n:
                 arr[j] = arr[i]
