@@ -10,12 +10,11 @@ class Solution:
         while l<r:
             leftmax=max(leftmax,height[l])
             rightmax=max(rightmax,height[r])
-            if leftmax<rightmax:
-                res+=max(0,leftmax-height[l])
+            if leftmax<=rightmax:
+                res+=leftmax-height[l]
                 l+=1
             else:
-                res+=max(0,rightmax-height[r])
-                r-=1
-                
+                res+=rightmax-height[r]
+                r-=1        
         return res        
         
