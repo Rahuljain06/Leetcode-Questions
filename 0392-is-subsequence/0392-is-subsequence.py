@@ -4,8 +4,6 @@ class Solution:
         for j in t:
             if i<len(s) and s[i]==j:
                 i+=1
-            if i==len(s):
-                return i==len(s)
         return i==len(s)
                 
             
