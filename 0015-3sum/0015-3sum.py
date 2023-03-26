@@ -2,14 +2,9 @@ class Solution:
     def threeSum(self, num: List[int]) -> List[List[int]]:
         num.sort()
         hashmap=set()
-        result = num[0] + num[1] + num[2]
-
         for i in range(len(num) - 2):
-
             l, r = i+1, len(num) - 1
-
             while l < r:
-
                 sum= num[i] + num[l] + num[r] 
 
                 if sum >0:
