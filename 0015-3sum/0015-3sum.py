@@ -12,8 +12,7 @@ class Solution:
                 elif sum<0:
                     l+=1
                 else:
-                    if not (num[i],num[l],num[r]) in hashmap:
-                        hashmap.add((num[i],num[l],num[r]))
+                    hashmap.add((num[i],num[l],num[r]))
                     l+=1
                     r-=1
             
