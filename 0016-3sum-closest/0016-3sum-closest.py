@@ -9,7 +9,7 @@ class Solution:
                 sum = num[i] + num[l] + num[r]
                 if abs(sum - target) < abs(result - target):
                     result = sum
-                elif sum < target:
+                if sum < target:
                     l += 1
                 elif sum > target:
                     r -= 1
