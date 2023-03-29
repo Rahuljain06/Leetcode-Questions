@@ -8,12 +8,12 @@ class Solution:
                 l, r = j + 1, n - 1
                 remain = target - nums[i] - nums[j]
                 while l < r:
-                    if nums[l] + nums[r] == remain:
+                    if nums[l] + nums[r] > remain:
+                        r -= 1
+                    elif nums[l] + nums[r] < remain: 
+                        l += 1
+                    else:
                         ans.add((nums[i], nums[j], nums[l], nums[r]))
                         l += 1
                         r -= 1
-                    elif nums[l] + nums[r] > remain:
-                        r -= 1
-                    else:
-                        l += 1
         return ans
