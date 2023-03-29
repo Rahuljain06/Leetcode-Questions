@@ -1,8 +1,11 @@
 class Solution:
-    def maxSatisfaction(self, A: List[int]) -> int:
-        res = total = 0
-        A.sort()
-        while A and A[-1] + total > 0:
-            total += A.pop()
-            res += total
+    def maxSatisfaction(self, satisfaction: List[int]) -> int:
+        satisfaction.sort(reverse=True)
+        n = len(satisfaction)
+        presum, res = 0, 0
+        for i in range(n):
+            presum += satisfaction[i]
+            if presum < 0:
+                break
+            res += presum
         return res
