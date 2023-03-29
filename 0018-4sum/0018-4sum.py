@@ -6,10 +6,10 @@ class Solution:
             for j in range(i+1, len(nums)):
                 l, r = j + 1, len(nums) - 1
                 while l < r:
-                    remain = nums[i] + nums[j] + nums[l] + nums[r]
-                    if remain > target:
+                    sum = nums[i] + nums[j] + nums[l] + nums[r]
+                    if sum > target:
                         r -= 1
-                    elif remain< target: 
+                    elif sum < target: 
                         l += 1
                     else:
                         ans.add((nums[i], nums[j], nums[l], nums[r]))
