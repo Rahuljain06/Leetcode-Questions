@@ -1,11 +1,10 @@
 class Solution:
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
         nums.sort()
-        n = len(nums)
         ans = set()
-        for i in range(n):
-            for j in range(i+1, n):
-                l, r = j + 1, n - 1
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
+                l, r = j + 1, len(nums) - 1
                 remain = target - nums[i] - nums[j]
                 while l < r:
                     if nums[l] + nums[r] > remain:
