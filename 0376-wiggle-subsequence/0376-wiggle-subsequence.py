@@ -5,12 +5,12 @@ class Solution:
         length=1
         up=2
         for i in range(1,len(nums)):
-            if nums[i]>nums[i-1] and up!=1:
+            if nums[i]>nums[i-1] and up!=True:
                 length+=1
-                up=1
-            elif nums[i]<nums[i-1] and up!=0:
+                up=True
+            elif nums[i]<nums[i-1] and up!=False:
                 length+=1
-                up=0
+                up=False
         return length
 
         
