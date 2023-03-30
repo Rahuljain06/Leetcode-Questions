@@ -1,17 +1,15 @@
 class DataStream {
-    int cnt=0,val,k;
+    int cnt,val,k;
     public DataStream(int value, int k) {
         this.val=value;
         this.k=k;
     }
     
     public boolean consec(int num) {
-        if (num==this.val){
+        if (num==this.val)
             cnt++;
-        }
-        else{
+        else
             cnt=0;
-        }
         return cnt>=this.k;
         
     }
