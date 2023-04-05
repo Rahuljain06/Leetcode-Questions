@@ -5,4 +5,4 @@ class Solution:
         for i in range(len(nums)):
             total+=nums[i]
             res=max(res,math.ceil(total/(i+1)))
-        return int(res)
+        return res
