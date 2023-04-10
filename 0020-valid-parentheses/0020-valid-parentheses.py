@@ -6,7 +6,7 @@ class Solution:
         for char in s:
             if char == "(" or char == "{" or char == "[":
                 stack.append(char) 
-            elif len(stack) <= 0:
+            elif len(stack) == 0:
                 return False
             elif char == ")" and stack.pop() != "(":
                 return False
