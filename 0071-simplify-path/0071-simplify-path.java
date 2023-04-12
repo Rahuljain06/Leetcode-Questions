@@ -5,7 +5,7 @@ class Solution {
         for (String c : path.split("/")) {
             if (!stack.empty() && c.equals("..")) {
                 stack.pop();
-            } else if (!skip.contains(c)) {
+            } else if (!c.equals("..") && !c.equals(".") && !c.equals("")) {
                 stack.push(c);
             }
         }
