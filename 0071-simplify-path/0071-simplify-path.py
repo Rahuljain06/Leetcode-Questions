@@ -6,6 +6,6 @@ class Solution:
             if c == "..":
                 if stack:
                     stack.pop()
-            elif c not in skip:
+            elif c!= "." and c!= "":
                 stack.append(c)
         return "/"+"/".join(stack)
