@@ -5,7 +5,7 @@ class Solution {
             if (c.equals("..")) {
                 if (!stack.empty())
                     stack.pop();
-            } else if (!c.equals("..") && !c.equals(".") && !c.equals("")) {
+            } else if (!c.equals(".") && !c.equals("")) {
                 stack.push(c);
             }
         }
