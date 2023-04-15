@@ -1,7 +1,7 @@
 class Solution:
     def maxValueOfCoins(self, piles, K):
         N = len(piles)
-        @lru_cache(None)
+        @cache
         def dp(n, k):
             if n == N:
                 if k == 0: return 0
