@@ -3,7 +3,6 @@ class Solution:
      
         a=max(c)
         for i in range(len(c)):
-            
             if c[i]+extra>=a:
                 c[i]=True
             else:
