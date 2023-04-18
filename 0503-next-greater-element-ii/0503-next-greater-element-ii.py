@@ -1,7 +1,7 @@
 class Solution:
     def nextGreaterElements(self, nums: List[int]) -> List[int]:
         nums2 = nums * 2
-        d={}
+        d={1:[]}
         st=[]
         res=[]
         for x in nums2:
