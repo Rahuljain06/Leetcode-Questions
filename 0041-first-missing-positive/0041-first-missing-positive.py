@@ -3,8 +3,7 @@ class Solution:
         n=len(nums)
         for i in range(n):
             while (nums[i]>0 and nums[i]<=n) and (nums[nums[i] - 1]!=nums[i]):
-                c=nums[i]-1
-                nums[i],nums[c]=nums[c],nums[i]
+                nums[nums[i]-1],nums[i]=nums[i],nums[nums[i]-1]
         
         
         for i in range(n):
