@@ -1,15 +1,12 @@
 class Solution:
     def addDigits(self, num: int) -> int:
-        s=str(num)
         sum=0
-        for i in s:
-            sum+=int(i)
-        if len(str(sum))==1:
-            
-            return sum
-        else:
-            
-            return self.addDigits(sum)
+        cnt=0
+        while(num>0):
+            sum+=num%10
+            num//=10
+            cnt+=1
+        return self.addDigits(sum) if cnt>=2 else sum
         
         
             
