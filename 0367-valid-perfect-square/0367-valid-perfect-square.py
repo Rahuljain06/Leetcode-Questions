@@ -4,7 +4,7 @@ class Solution:
         end=x
         while start<=end:
             mid=start+(end-start)//2
-            if mid*mid==x<(mid+1)*(mid+1):
+            if mid*mid==x:
                 return True
             elif mid*mid>x:
                 end=mid-1
