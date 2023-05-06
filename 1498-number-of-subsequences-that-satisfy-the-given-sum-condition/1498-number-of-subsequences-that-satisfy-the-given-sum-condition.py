@@ -6,8 +6,9 @@ class Solution:
         c=0
         mod=10**9+7
         pows=[1]*len(nums)
-        for k in range(1,len(nums)):
-            pows[k]=(pows[k-1]*2)%mod
+        for i in range(1,len(nums)):
+            pows[i]=(pows[i-1]*2)%mod
+        i=0
         while i<=j:
             if nums[i]+nums[j]<=target:
                 c+=pows[j-i]%mod
