@@ -30,7 +30,7 @@ class Solution:
             
             
         left,right=head,prev
-        while right:
+        while right and left:
             if left.val!=right.val:
                 return False
             left=left.next
