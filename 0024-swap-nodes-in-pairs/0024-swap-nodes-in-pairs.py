@@ -14,7 +14,7 @@ class Solution:
             temp1=curr.next  # 1
             temp2=curr.next.next #2
             # swapping
-            curr.next,temp2.next,temp1.next=temp2,temp1,temp2.next
+            curr.next,temp1.next,temp2.next=temp2,temp2.next,temp1
             curr=temp1
         return dummy.next
 
