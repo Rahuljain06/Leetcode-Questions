@@ -1,19 +1,32 @@
 class MyHashSet:
 
     def __init__(self):
-        self.val=[False]*(1000000+1)
+        self.size=10000
+        self.val=[None]*self.size
         
-
+    def hash(self,key):
+        return key%self.size
+    
     def add(self, key: int) -> None:
-        self.val[key]=True
         
-
+        h=self.hash(key)
+        if self.val[h]==None:
+            self.val[h]=[key]
+        elif key in self.val[h]:
+            return
+        self.val[h].append(key)
+        
     def remove(self, key: int) -> None:
-        self.val[key]=False
-        
-
+        h=self.hash(key)
+        while self.val[h] is not None and key in self.val[h]:
+            self.val[h].remove(key)
     def contains(self, key: int) -> bool:
-        return self.val[key]
+        
+        h=self.hash(key)
+        if self.val[h] is not None and key in self.val[h]:
+            return True
+        return False
+       
         
 
 
