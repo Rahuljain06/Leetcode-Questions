@@ -1,7 +1,7 @@
 class MyHashSet:
 
     def __init__(self):
-        self.size=10000
+        self.size=1000
         self.val=[None]*self.size
         
     def hash(self,key):
