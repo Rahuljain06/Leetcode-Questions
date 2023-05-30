@@ -14,12 +14,15 @@ class MyHashSet:
             self.val[h]=[key]
         elif key in self.val[h]:
             return
-        self.val[h].append(key)
+        else:
+            self.val[h].append(key)
         
     def remove(self, key: int) -> None:
+        
         h=self.hash(key)
-        while self.val[h] is not None and key in self.val[h]:
+        if self.val[h] is not None and key in self.val[h]:
             self.val[h].remove(key)
+        
     def contains(self, key: int) -> bool:
         
         h=self.hash(key)
