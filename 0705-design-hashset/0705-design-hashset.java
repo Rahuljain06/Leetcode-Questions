@@ -1,8 +1,10 @@
 class MyHashSet {
-        int size =(int)1e6+1;
+        int size;
         int[] arr;
     public MyHashSet() {
+      size=(int)1e6+1;
       arr = new int[size];
+      
     }
     
     public void add(int key) {
