@@ -16,6 +16,7 @@ class MyHashSet {
         int h = hash(key);
         if (val[h] == null) {
             val[h] = new ArrayList<>();
+            val[h].add(key);
         }
         if (!val[h].contains(key)) {
             val[h].add(key);
