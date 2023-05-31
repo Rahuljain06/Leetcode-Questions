@@ -1,27 +1,37 @@
+import java.util.ArrayList;
+
 class MyHashSet {
-        int size;
-        int[] arr;
+    private int size = 1000;
+    private ArrayList<Integer>[] val;
+
     public MyHashSet() {
-      size=(int)1e6+1;
-      arr = new int[size];
-      
+        val = new ArrayList[size];
     }
-    
+
+    private int hash(int key) {
+        return key % size;
+    }
+
     public void add(int key) {
-        if (arr[key]==0){
-            arr[key]=1;
+        int h = hash(key);
+        if (val[h] == null) {
+            val[h] = new ArrayList<>();
+        }
+        if (!val[h].contains(key)) {
+            val[h].add(key);
         }
     }
-    
+
     public void remove(int key) {
-        if (arr[key]==1){
-            arr[key]=0;
+        int h = hash(key);
+        if (val[h] != null) {
+            val[h].remove(Integer.valueOf(key));
         }
     }
-    
+
     public boolean contains(int key) {
-        if (arr[key]==1) return true;
-        return false;
+        int h = hash(key);
+        return val[h] != null && val[h].contains(key);
     }
 }
 
