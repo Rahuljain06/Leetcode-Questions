@@ -64,7 +64,6 @@ class MyHashMap {
             cur.next=null;
         } else {
             ListNode prev = null;
-            cur = cur;
             while (cur != null) {
                 if (cur.pair[0] == key) {
                     prev.next = cur.next;
