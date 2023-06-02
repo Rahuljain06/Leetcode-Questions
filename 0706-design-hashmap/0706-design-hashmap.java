@@ -26,15 +26,16 @@ class MyHashMap {
             h.set(index, new ListNode(key, value));
         } else {
             ListNode cur = h.get(index);
-            while (true) {
+            ListNode pre= null;
+            while (cur!=null) {
                 if (cur.pair[0] == key) {
                     cur.pair[1] = value;
                     return;
                 }
-                if (cur.next == null) break;
+                pre=cur;
                 cur = cur.next;
             }
-            cur.next = new ListNode(key, value);
+            pre.next = new ListNode(key, value);
         }
     }
     public int get(int key) {
