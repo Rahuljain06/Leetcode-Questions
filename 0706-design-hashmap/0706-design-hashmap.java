@@ -68,10 +68,9 @@ class MyHashMap {
                 if (cur.pair[0] == key) {
                     prev.next = cur.next;
                     break;
-                } else {
-                    prev = cur;
-                    cur = cur.next;
                 }
+                prev = cur;
+                cur = cur.next;    
             }
         }
     }
