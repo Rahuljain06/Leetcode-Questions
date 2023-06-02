@@ -20,6 +20,8 @@ class MyHashMap {
             h.add(null);
         }
     }
+    
+    
     public void put(int key, int value) {
         int index = key % m;
         if (h.get(index) == null) {
@@ -38,18 +40,22 @@ class MyHashMap {
             pre.next = new ListNode(key, value);
         }
     }
+    
+    
+    
     public int get(int key) {
         int index = key % m;
         ListNode cur = h.get(index);
         while (cur != null) {
             if (cur.pair[0] == key) {
                 return cur.pair[1];
-            } else {
-                cur = cur.next;
             }
+                cur = cur.next;
+            
         }
         return -1;
     }
+    
     public void remove(int key) {
         int index = key % m;
         ListNode cur = h.get(index);
