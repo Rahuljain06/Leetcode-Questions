@@ -63,8 +63,8 @@ class MyHashMap {
             h.set(index, cur.next);
             cur.next=null;
         } else {
-            ListNode prev = cur;
-            cur = cur.next;
+            ListNode prev = null;
+            cur = cur;
             while (cur != null) {
                 if (cur.pair[0] == key) {
                     prev.next = cur.next;
