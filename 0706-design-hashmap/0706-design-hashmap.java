@@ -50,8 +50,7 @@ class MyHashMap {
             if (cur.pair[0] == key) {
                 return cur.pair[1];
             }
-                cur = cur.next;
-            
+            cur = cur.next;
         }
         return -1;
     }
@@ -62,6 +61,7 @@ class MyHashMap {
         if (cur == null) return;
         if (cur.pair[0] == key) {
             h.set(index, cur.next);
+            cur.next=null;
         } else {
             ListNode prev = cur;
             cur = cur.next;
