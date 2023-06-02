@@ -46,12 +46,13 @@ class MyHashMap {
     public int get(int key) {
         int index = key % m;
         ListNode cur = h.get(index);
+        if (cur!=null){
         while (cur != null) {
             if (cur.pair[0] == key) {
                 return cur.pair[1];
             }
             cur = cur.next;
-        }
+        }}
         return -1;
     }
     
