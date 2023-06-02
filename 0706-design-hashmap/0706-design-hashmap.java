@@ -59,7 +59,7 @@ class MyHashMap {
         int index = key % m;
         ListNode cur = h.get(index);
         if (cur == null) return;
-        if (cur.pair[0] == key) {
+        else if (cur.pair[0] == key) {
             h.set(index, cur.next);
             cur.next=null;
         } else {
