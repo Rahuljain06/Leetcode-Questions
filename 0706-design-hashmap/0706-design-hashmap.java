@@ -2,11 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 class ListNode {
-    int[] pair;
+    int key;
+    int value;
     ListNode next;
-    public ListNode(int key, int val) {
-        pair = new int []{key, val};
-        next=null;
+    public ListNode(int _key, int _val) {
+        key=_key;
+        value=_val;
     }
 }
 
@@ -30,8 +31,8 @@ class MyHashMap {
             ListNode cur = h.get(index);
             ListNode pre= null;
             while (cur!=null) {
-                if (cur.pair[0] == key) {
-                    cur.pair[1] = value;
+                if (cur.key == key) {
+                    cur.value = value;
                     return;
                 }
                 pre=cur;
@@ -48,8 +49,8 @@ class MyHashMap {
         ListNode cur = h.get(index);
         if (cur!=null){
         while (cur != null) {
-            if (cur.pair[0] == key) {
-                return cur.pair[1];
+            if (cur.key == key) {
+                return cur.value;
             }
             cur = cur.next;
         }}
@@ -60,13 +61,13 @@ class MyHashMap {
         int index = key % m;
         ListNode cur = h.get(index);
         if (cur == null) return;
-        else if (cur.pair[0] == key) {
+        else if (cur.key == key) {
             h.set(index, cur.next);
             cur.next=null;
         } else {
             ListNode prev = null;
             while (cur != null) {
-                if (cur.pair[0] == key) {
+                if (cur.key == key) {
                     prev.next = cur.next;
                     break;
                 }
