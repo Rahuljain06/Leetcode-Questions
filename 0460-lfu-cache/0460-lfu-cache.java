@@ -79,6 +79,7 @@ class LFUCache {
         
         DLL newlist=freqmap.getOrDefault(node.nodefreq,new DLL());
         newlist.addNode(node);
+        cache.put(node.key,node);
         freqmap.put(node.nodefreq,newlist);
     }
     
