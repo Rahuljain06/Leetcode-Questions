@@ -8,7 +8,6 @@ class Solution:
         
         st1=[]
         st2=[]
-        dummy=ListNode()
         while l1:
             st1.append(l1.val)
             l1=l1.next
