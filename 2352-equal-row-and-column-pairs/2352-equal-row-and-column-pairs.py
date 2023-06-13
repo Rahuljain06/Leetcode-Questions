@@ -6,7 +6,7 @@ class Solution:
         for row in grid:
             r = tuple(row)
             d[r] = d.get(r,0)+1
-        print(d)
+
         cnt = 0
         for j in range(n):
             col = [grid[i][j] for i in range(n)]
