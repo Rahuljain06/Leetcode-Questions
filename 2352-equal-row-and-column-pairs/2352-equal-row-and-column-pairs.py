@@ -5,7 +5,7 @@ class Solution:
         
         for row in grid:
             r = tuple(row)
-            d[r] += 1
+            d[r]+=1
         
         cnt = 0
         for j in range(n):
