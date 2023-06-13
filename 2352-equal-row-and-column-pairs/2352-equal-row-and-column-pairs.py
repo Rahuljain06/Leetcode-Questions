@@ -4,8 +4,8 @@ class Solution:
         d = defaultdict(int)
         
         for row in grid:
-            rowtuple = tuple(row)
-            d[rowtuple] += 1
+            r = tuple(row)
+            d[r] += 1
         
         cnt = 0
         for j in range(n):
