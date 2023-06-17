@@ -5,7 +5,7 @@ class Solution:
         arr2=sorted(set(arr2))
         @functools.lru_cache(None)
         def dfs(i,prev):
-            if i>=len(arr1):
+            if i==len(arr1):
                 return 0
             j=bisect.bisect_right(arr2,prev)
             swap=1+dfs(i+1,arr2[j]) if j<len(arr2) else math.inf
