@@ -1,9 +1,9 @@
 import bisect
-import functools
+
 class Solution:
     def makeArrayIncreasing(self, arr1: List[int], arr2: List[int]) -> int:
         arr2=sorted(set(arr2))
-        @functools.lru_cache(None)
+        @cache
         def dfs(i,prev):
             if i==len(arr1):
                 return 0
