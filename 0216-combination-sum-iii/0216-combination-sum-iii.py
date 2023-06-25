@@ -6,7 +6,7 @@ class Solution(object):
         return res
     
     def dfs(self,nums,path,target,k,res):
-        if k<0 or target<0:
+        if k<0 :
             return        
         if target==0 and k==0:
             res.append(path)
