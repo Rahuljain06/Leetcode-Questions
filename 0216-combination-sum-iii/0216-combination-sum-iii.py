@@ -5,9 +5,7 @@ class Solution(object):
         self.dfs(range(1,10),[],target,k,res)
         return res
     
-    def dfs(self,nums,path,target,k,res):
-        if target<0:
-            return        
+    def dfs(self,nums,path,target,k,res):   
         if target==0 and k==0:
             res.append(path)
             return
