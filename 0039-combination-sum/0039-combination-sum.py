@@ -5,6 +5,8 @@ class Solution:
         return res
     
     def dfs(self,nums,target,path,res):
+        if target<0:
+            return #backtracking
         if target==0:
             res.append(path)
             return
