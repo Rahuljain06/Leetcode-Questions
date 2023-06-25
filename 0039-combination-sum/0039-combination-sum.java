@@ -13,10 +13,11 @@ class Solution {
             return;
         }
         for (int i=0;i<nums.length;i++){
+            if (nums[i]>target)
+                continue;
             List<Integer> c = new ArrayList<>(path);
             c.add(nums[i]);
             dfs(Arrays.copyOfRange(nums,i,nums.length), c, target-nums[i],res);
         }
-        
     }
 }
