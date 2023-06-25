@@ -6,7 +6,7 @@ class Solution:
         return res
         
     def dfs(self,nums,target,path,res):
-        if 0==target:
+        if target==0:
             res.append(path)
             return
 
