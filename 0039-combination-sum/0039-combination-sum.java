@@ -6,8 +6,6 @@ class Solution {
     }
     
     public void dfs(int[] nums,List<Integer> path,int target,List<List<Integer>> res){
-        if (target<0)
-            return;
         if (target == 0){
             res.add(path);
             return;
