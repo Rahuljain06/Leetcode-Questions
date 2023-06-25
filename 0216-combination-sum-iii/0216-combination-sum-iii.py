@@ -7,12 +7,7 @@ class Solution(object):
     
     def dfs(self,nums,path,target,k,res):
         if k<0 or target<0:
-            return
-        elif k==0 and target!=0:
-            return
-        elif k>0 and target==0:
-            return
-        
+            return        
         if target==0 and k==0:
             res.append(path)
             return
