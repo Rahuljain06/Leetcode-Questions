@@ -8,9 +8,9 @@ class Solution(object):
     def dfs(self,nums,path,target,k,res):
         if k<0 or target<0:
             return
-        if k==0 and target!=0:
+        elif k==0 and target!=0:
             return
-        if k>0 and target==0:
+        elif k>0 and target==0:
             return
         
         if target==0 and k==0:
