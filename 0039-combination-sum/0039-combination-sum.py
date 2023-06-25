@@ -1,7 +1,6 @@
 class Solution:
     def combinationSum(self, nums: List[int], target: int) -> List[List[int]]:
         res=[]
-        nums.sort()
         self.dfs(nums,target,[],res)
         return res
     
@@ -12,6 +11,6 @@ class Solution:
             res.append(path)
             return
         for i in range(len(nums)):
-            if nums[i]>target:
-                break
+            if target<nums[i]:
+                continue
             self.dfs(nums[i:],target-nums[i],path+[nums[i]],res)
