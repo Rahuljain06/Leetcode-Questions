@@ -11,6 +11,4 @@ class Solution:
             res.append(path)
             return
         for i in range(len(nums)):
-            if target<nums[i]:
-                continue
             self.dfs(nums[i:],target-nums[i],path+[nums[i]],res)
