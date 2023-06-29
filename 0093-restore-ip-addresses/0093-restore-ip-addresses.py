@@ -6,8 +6,9 @@ class Solution(object):
     
     def backtrack(self,s, dots, path, rst):
         
-        if dots == 4 and not s: #have 4 chunk and all the digits are used than we append
-            rst.append(path[:-1]) # we are excluding the 4 and last dot here"255.255.11.135."
+        if dots == 4:#have 4 chunk and all the digits are used than we append
+            if not s:
+                rst.append(path[:-1]) # we are excluding the 4 and last dot here"255.255.11.135."
             return
         
         for i in range(1, 4):
