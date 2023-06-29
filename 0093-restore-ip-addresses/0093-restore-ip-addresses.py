@@ -14,7 +14,7 @@ class Solution(object):
         for i in range(1, 4):
             #prevent index overflow
             if i > len(s):
-                continue
+                break
                 
             #take 1 digit is always good
             
