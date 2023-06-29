@@ -18,7 +18,7 @@ class Solution {
                 continue;
             if (i>2 && Integer.parseInt(s.substring(0,i))>255)
                 continue;
-            dfs(s.substring(i,s.length()),dots+1,path+s.substring(0,i)+".",res);
+            dfs(s.substring(i),dots+1,path+s.substring(0,i)+".",res);
         }
     }
 }
