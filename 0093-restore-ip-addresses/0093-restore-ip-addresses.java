@@ -8,6 +8,7 @@ class Solution {
         if (dots==4){
             if (s.length()==0)
                 res.add(path.substring(0,path.length()-1));
+        return;
         }
         
         for(int i=1;i<4;i++){
