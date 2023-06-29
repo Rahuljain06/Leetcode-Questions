@@ -6,9 +6,8 @@ class Solution {
     }
     private void dfs(String s, int dots, String path,List<String> res){
         if (dots==4){
-            if (s.length()==0){
+            if (s.length()==0)
                 res.add(path.substring(0,path.length()-1));
-            }
         }
         
         for(int i=1;i<4;i++){
@@ -18,7 +17,7 @@ class Solution {
                 continue;
             if (i>2 && Integer.parseInt(s.substring(0,i))>255)
                 continue;
-            dfs(s.substring(i),dots+1,path+s.substring(0,i)+".",res);
+            dfs(s.substring(i,s.length()),dots+1,path+s.substring(0,i)+".",res);
         }
     }
 }
