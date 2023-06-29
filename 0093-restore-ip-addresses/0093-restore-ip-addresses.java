@@ -13,7 +13,7 @@ class Solution {
         
         for(int i=1;i<4;i++){
             if (i>s.length())
-                continue;
+                break;
             if (i>1 && s.charAt(0)=='0')
                 continue;
             if (i>2 && Integer.parseInt(s.substring(0,i))>255)
