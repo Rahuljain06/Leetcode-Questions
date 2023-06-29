@@ -3,22 +3,26 @@ class Solution(object):
         rst = []
         self.backtrack(s, 0, '', rst)
         return rst
+    
     def backtrack(self,s, dots, path, rst):
-        if dots == 4 and not s:
-            #have 4 chunk and all the digits are used than we append
+        
+        if dots == 4 and not s: #have 4 chunk and all the digits are used than we append
             rst.append(path[:-1]) # we are excluding the 4 and last dot here"255.255.11.135."
             return
+        
         for i in range(1, 4):
             #prevent index overflow
             if i > len(s):
                 continue
+                
             #take 1 digit is always good
-            #take 2 or 3 digits, first digit cannot be '0'
-            if i > 1 and s[0] == '0':
+            
+            if i > 1 and s[0] == '0': #take 2 or 3 digits, first digit cannot be '0'
                 continue
-            #take 3 digits, cannot greater than 255
-            if i > 2 and int(s[:3]) > 255:
+                
+            if i > 2 and int(s[:3]) > 255:#take 3 digits, cannot greater than 255
                 continue
+                
             self.backtrack(s[i:], dots+1, path + s[:i] + '.', rst)
             
             
