@@ -22,11 +22,9 @@ class Solution {
             while(num>=val){
                 num-=val;
                 res+=key;
-                if(num==0)
-                    return res;
             }
         }
-        return "";
+        return res;
         
         
     }
