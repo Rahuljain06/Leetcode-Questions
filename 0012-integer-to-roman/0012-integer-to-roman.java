@@ -14,7 +14,6 @@ class Solution {
         map.put("V",5);
         map.put("IV",4);
         map.put("I",1);
-        System.out.println(map);
         
         String res="";
         
