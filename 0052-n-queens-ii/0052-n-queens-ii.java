@@ -1,10 +1,9 @@
 class Solution {
+    int res = 0;
     public int totalNQueens(int n) {
         Set<Integer> col=new HashSet<>();
         Set<Integer> pos=new HashSet<>();
         Set<Integer> neg=new HashSet<>();
-        
-        List<List<String>> res = new ArrayList<>();
         
         char[][] board = new char[n][n]; 
 
@@ -12,19 +11,15 @@ class Solution {
             Arrays.fill(row, '.');
         }
         
-        dfs(0,col,pos, neg, board,n,res);
+        dfs(0,col,pos, neg, board,n);
         
-        return res.size();
+        return res;
     }
         
-    public void dfs(int r,Set<Integer> col,Set<Integer> pos,Set<Integer> neg,char[][] board, int n, List<List<String>> res){
+    public void dfs(int r,Set<Integer> col,Set<Integer> pos,Set<Integer> neg,char[][] board, int n){
         
         if(n==r){
-            List<String> copy = new ArrayList<>();
-            for (char[] row : board) {
-                copy.add(new String(row));
-            }
-            res.add(copy);
+            res++;
             return;
         }
         
@@ -36,7 +31,7 @@ class Solution {
             neg.add(r+c);
             board[r][c]='Q';
             
-            dfs(r+1,col,pos, neg, board,n,res);
+            dfs(r+1,col,pos, neg, board,n);
             
             col.remove(c);
             pos.remove(r-c);
