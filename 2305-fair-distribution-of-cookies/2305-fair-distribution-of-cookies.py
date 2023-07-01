@@ -1,18 +1,23 @@
 class Solution:
     def distributeCookies(self, cookies: List[int], k: int) -> int:
-        ans = float('inf')
-        fair = [0]*k
-        def rec(i):
-            nonlocal ans,fair
+        min_unfairness = float('inf')
+        distribution = [0] * k
+        
+        def backtrack(i):
+            nonlocal min_unfairness, distribution
+            
             if i == len(cookies):
-                ans = min(ans,max(fair))
+                min_unfairness = min(min_unfairness, max(distribution))
                 return
-            # Bounding condition to stop a branch if unfairness already exceeds current optimal soltution
-            if ans <= max(fair):
+            
+            # Bounding condition to stop a branch if unfairness already exceeds current optimal solution
+            if min_unfairness <= max(distribution):
                 return
+            
             for j in range(k):
-                fair[j] += cookies[i]
-                rec(i+1)
-                fair[j] -= cookies[i]
-        rec(0)
-        return ans
+                distribution[j] += cookies[i]
+                backtrack(i + 1)
+                distribution[j] -= cookies[i]
+        
+        backtrack(0)
+        return min_unfairness
