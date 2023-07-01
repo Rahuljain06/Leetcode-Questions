@@ -12,7 +12,6 @@ class Solution:
         if r==n:
             copy=["".join(row) for row in board]
             res.append(copy)
-            print(copy)
             return
 
         for c in range(n):
