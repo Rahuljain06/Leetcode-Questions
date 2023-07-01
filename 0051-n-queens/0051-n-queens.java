@@ -13,6 +13,7 @@ class Solution {
         }
         
         dfs(0,col,pos, neg, board,n,res);
+        
         return res;
     }
         
@@ -24,6 +25,7 @@ class Solution {
                 copy.add(new String(row));
             }
             res.add(copy);
+            return;
         }
         
         for(int c=0;c<n;c++){
