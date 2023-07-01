@@ -5,18 +5,12 @@ class Solution {
         Set<Integer> pos=new HashSet<>();
         Set<Integer> neg=new HashSet<>();
         
-        char[][] board = new char[n][n]; 
-
-        for (char[] row : board) {
-            Arrays.fill(row, '.');
-        }
-        
-        dfs(0,col,pos, neg, board,n);
+        dfs(0,col,pos, neg,n);
         
         return res;
     }
         
-    public void dfs(int r,Set<Integer> col,Set<Integer> pos,Set<Integer> neg,char[][] board, int n){
+    public void dfs(int r,Set<Integer> col,Set<Integer> pos,Set<Integer> neg, int n){
         
         if(n==r){
             res++;
@@ -29,14 +23,13 @@ class Solution {
             col.add(c);
             pos.add(r-c);
             neg.add(r+c);
-            board[r][c]='Q';
             
-            dfs(r+1,col,pos, neg, board,n);
+            dfs(r+1,col,pos, neg,n);
             
             col.remove(c);
             pos.remove(r-c);
             neg.remove(r+c);
-            board[r][c]='.';
+            
         }
         
     }
