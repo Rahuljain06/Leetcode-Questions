@@ -12,16 +12,15 @@ class Solution:
         
         def dfs(root,l):
             if root is None:
-                return
+                return None
             if not root.left and not root.right:
                 l.append(root.val)
-                return
             dfs(root.left,l)
             dfs(root.right,l)
-        print(l1)
-        print(l2)
         dfs(root1,l1)
         dfs(root2,l2)
+        print(l1)
+        print(l2)
         return l1==l2
             
             
