@@ -5,36 +5,25 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    # hamne count esiliye use kiya kyunki jab ham pathsum me iterate karenge to vo har baar 0 ho jayega to hame globally count chaiye tha to maine constructor par daal diya.
+    def __init__(self):
+        self.cnt=0
     def pathSum(self, root: Optional[TreeNode], target: int) -> int:
-        #Approach ham poore tree me traverse karenge or har node par dfs lagakar ye check karenge ki waha se koi bhi path aisa hai jiska sum target ke equal hai
-        # define global return var
-        self.numOfPaths = 0
-        # 1st layer DFS to go through each node
-        self.dfs(root, target)
-        # return result
-        return self.numOfPaths
-    
-    # define: traverse through the tree, at each treenode, call another DFS to test if a path sum include the answer
-    def dfs(self, node, target):
-        # exit condition
-        if node is None:
-            return 
-        # dfs break down 
-        self.test(node, target) # you can move the line to any order, here is pre-order
-        self.dfs(node.left, target)
-        self.dfs(node.right, target)
-        
-    # define: for a given node, DFS to find any path that sum == target, if find self.numOfPaths += 1
-    def test(self, node, target):
-        # exit condition
-        if node is None:
-            return
-        if node.val == target:
-            self.numOfPaths += 1
-            
-        # test break down
-        self.test(node.left, target-node.val)
-        self.test(node.right, target-node.val)
+        #cnt=0 # ye esiliye work nhi karega kyunki tab ham traverse kaege pathsum me o ye har baar 0 ho jayega or hame total nhi milega.
+        #Approach: ham poore tree me traverse karenge or har node par dfs lagakar ye check karenge ki waha se koi bhi path aisa hai jiska sum target ke equal hai
+        def dfs(node,target):
+            if node is None:
+                return 0
+            if node.val==target:
+                self.cnt+=1
+            dfs(node.left, target-node.val)
+            dfs(node.right, target-node.val)
+        if root is None:
+            return 0
+        dfs(root,target)
+        self.pathSum(root.left,target)
+        self.pathSum(root.right,target)
+        return self.cnt
         
         
         
