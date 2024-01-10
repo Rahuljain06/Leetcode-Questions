@@ -13,7 +13,6 @@ class Solution:
     def pathSum(self, root: Optional[TreeNode], target: int) -> int:
         #cnt=0 # ye esiliye work nhi karega kyunki tab ham traverse kaege pathsum me o ye har baar 0 ho jayega or hame total nhi milega.
         #Approach: ham poore tree me traverse karenge or har node par dfs lagakar ye check karenge ki waha se koi bhi path aisa hai jiska sum target ke equal hai
-        @cache
         def dfs(node,target):
             if node is None:
                 return 0
