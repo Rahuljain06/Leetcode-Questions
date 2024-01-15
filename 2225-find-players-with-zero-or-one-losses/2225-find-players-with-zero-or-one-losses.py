@@ -10,6 +10,7 @@ class Solution:
                 d[j]-=1
             else:
                 d[j]=0
+        print(d)
         for i in d:
             if d[i]==1:
                 ans[0].append(i)
