@@ -7,4 +7,8 @@ class Solution:
                 cnt.add(j)
             res+=len(val)+len(cnt)*t[-i-1]
         return res
+    
+                
+    
+    
             
