@@ -6,6 +6,8 @@
 #         self.right = right
 class Solution:
     def pseudoPalindromicPaths (self, root: Optional[TreeNode]) -> int:
+        
+        
         cnt=0
         def palindrome(d):
             nonlocal cnt
@@ -15,7 +17,7 @@ class Solution:
                     if miss:
                         return False
                     miss=True
-            cnt+=1
+            return True
         def dfs(root,res):
             nonlocal cnt
             if not root:
@@ -26,7 +28,7 @@ class Solution:
                     cnt+=1
             dfs(root.left,res)
             dfs(root.right,res)
-            res[root.val]-=1
+            res[root.val]-=1 #backtrack
         dfs(root,defaultdict(int))
         
         return cnt
