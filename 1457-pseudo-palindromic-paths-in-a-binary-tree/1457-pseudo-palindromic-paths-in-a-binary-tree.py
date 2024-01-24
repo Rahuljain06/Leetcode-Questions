@@ -20,13 +20,13 @@ class Solution:
             nonlocal cnt
             if not root:
                 return None
-            res[root.val]= res[root.val]+1
+            res[root.val]+=1
             if not root.left and not root.right:
                 if palindrome(res):
                     cnt+=1
             dfs(root.left,res)
             dfs(root.right,res)
-            res[root.val]= res[root.val]-1
+            res[root.val]-=1
         dfs(root,defaultdict(int))
         
         return cnt
