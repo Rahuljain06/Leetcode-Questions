@@ -19,9 +19,10 @@ class Solution:
         #     d[cursum]=d.get(cursum,0)+1
         # return count
                 d = {0: 1}
-                s = 0
+                cursum = 0
                 for x in range(m):
-                    s += matrix[x][y2] - (matrix[x][y1-1] if y1 > 0 else 0)
-                    res += d.get(s - target, 0)
-                    d[s] = d.get(s, 0) + 1
+                    cursum += matrix[x][y2] - (matrix[x][y1-1] if y1 > 0 else 0)
+                    if cursum-target in d:
+                        res += d[cursum - target]
+                    d[cursum] = d.get(cursum, 0) + 1
         return res
