@@ -3,10 +3,9 @@ class Solution:
         nums.sort()
         res=[]
         for i in range(0,len(nums),3):
-            if nums[i+2]-nums[i]<=k:
-                res.append(nums[i:i+3])
-            else:
+            if nums[i+2]-nums[i]>k:
                 return []
+            res.append(nums[i:i+3])
         return res
         
             
