@@ -1,7 +1,8 @@
 class Solution:
     def maxSumAfterPartitioning(self, arr: List[int], k: int) -> int:
-        dp={}
         
+        # basically ham array ke ek ek karke sare elements par khade ho rhe  and waha se ham 3 steps aage dekh rhe hai or uss 3 elements ki s ub array me ham maximum store kar rhe hai jisko ham baad me window size se multiply kar rhe hai kyunki kisi-kisi case me window size 3 se kam hai.
+        dp={}
         def dfs(i):
             if i>len(arr):
                 return 0
