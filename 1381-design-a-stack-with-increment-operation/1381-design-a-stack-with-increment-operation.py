@@ -6,7 +6,7 @@ class CustomStack:
         self.mx=maxSize
 
     def push(self, x: int) -> None:
-        if self.c<self.mx:
+        if self.mx:
             self.st.append(x)
             self.mx-=1
             
