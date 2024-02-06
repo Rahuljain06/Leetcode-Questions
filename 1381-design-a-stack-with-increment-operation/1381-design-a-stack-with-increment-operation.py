@@ -8,12 +8,12 @@ class CustomStack:
     def push(self, x: int) -> None:
         if self.c<self.mx:
             self.st.append(x)
-            self.c+=1
+            self.mx-=1
             
 
     def pop(self) -> int:
         if self.st:
-            self.c-=1
+            self.mx+=1
             return self.st.pop()
         return -1
 
