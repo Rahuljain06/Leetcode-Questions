@@ -23,7 +23,6 @@ class CustomStack:
         a=[]
         while self.st:
             a.append(self.st.pop())
-        print(a)
         while a:
             if k>0:
                 self.st.append(val+a.pop())
