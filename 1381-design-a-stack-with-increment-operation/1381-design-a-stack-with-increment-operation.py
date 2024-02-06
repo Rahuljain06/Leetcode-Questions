@@ -20,15 +20,8 @@ class CustomStack:
         
 
     def increment(self, k: int, val: int) -> None:
-        a=[]
-        while self.st:
-            a.append(self.st.pop())
-        while a:
-            if k>0:
-                self.st.append(val+a.pop())
-            else:
-                self.st.append(a.pop())
-            k-=1
+        for i in range(min(k, len(self.st))):
+            self.st[i] += val
         
             
 
