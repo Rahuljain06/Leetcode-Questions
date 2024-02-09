@@ -1,5 +1,7 @@
 class Solution:
     def largestDivisibleSubset(self, nums: List[int]) -> List[int]:
+        #LIS jaisa bas len ki jgha array return karni hai
+        
         nums.sort()
         dp=[[num] for num in nums]
         for i in range(len(nums)-1,-1,-1):
