@@ -11,6 +11,5 @@ class Solution:
             self.res+=1
             l-=1
             r+=1
-        
-        
+    
         
