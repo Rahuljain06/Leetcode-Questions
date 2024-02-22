@@ -5,6 +5,7 @@ class Solution:
         self.dfs(tiles, "",res)
         return len(res)-1 #empty string add hogi ek extra esiliye -1 kiya
     def dfs(self,nums,path,res):
+        print(path)
         res.add(path)
         for i in range(len(nums)):
             self.dfs(nums[:i]+nums[i+1:],path+nums[i],res)
