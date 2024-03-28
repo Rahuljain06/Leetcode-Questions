@@ -11,7 +11,6 @@ class Solution:
                     l+=1
                 l+=1
                 d[nums[r]]-=1
-
             maxi=max(maxi,r-l+1)
         return maxi
             
