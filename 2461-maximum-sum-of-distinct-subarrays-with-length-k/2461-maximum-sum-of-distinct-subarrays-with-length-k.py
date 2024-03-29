@@ -12,7 +12,7 @@ class Solution:
             if r>=k-1:
                 d[nums[l]]-=1
                 cur-=nums[l]
-                if d[nums[l]]==0:
+                if not d[nums[l]]:
                      del d[nums[l]]
                 l+=1
         return res
