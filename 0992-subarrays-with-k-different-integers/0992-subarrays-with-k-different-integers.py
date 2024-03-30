@@ -9,7 +9,7 @@ class Solution:
     # k=2 ya usse kam ki 12 banegi:{[1],[2],[1,2],[1,2,1],[2,1],[1],[1,2,1,2],[2,1,2],[1,2],[2],[2,3],[3]}
     # k=1 ya usse kam ki 5 banegi : {[1],[2],[1],[2],[3]}
     # k=2 ki kitni array bani = 12-5=7 
-        def subarrayWithKAtMost(nums,k):
+        def subarrayWithAtMostK(nums,k):
             l=0
             res=0
             d=defaultdict(int)
@@ -23,5 +23,5 @@ class Solution:
                 res+=r-l+1
             return res
         
-        return subarrayWithKAtMost(nums,k) - subarrayWithKAtMost(nums,k-1)
+        return subarrayWithAtMostK(nums,k) - subarrayWithAtMostK(nums,k-1)
 
