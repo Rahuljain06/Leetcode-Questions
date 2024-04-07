@@ -20,6 +20,7 @@ class Solution:
         while st and star:
             if st.pop()>star.pop():
                 return False
-        if st: return False
+            
+        if st: return False #[agar saare star pop hone ke baad bhi koi open bracket bachta hai to ham False return karenge]
         return True
                 
