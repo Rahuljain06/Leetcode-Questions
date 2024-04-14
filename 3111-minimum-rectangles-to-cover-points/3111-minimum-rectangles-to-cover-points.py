@@ -5,7 +5,6 @@ class Solution:
         points=sorted(list(set(points)))
         if len(points)==1:
             return 1
-        print(points)
         res=0
         l=0
         for r in range(1,len(points)):
