@@ -15,9 +15,7 @@ class Solution:
                 if r in d:
                     visited[r]= all(dfs(i) for i in d[r]) 
             return visited[r]
-            
-            
-                
+
         for i in recipes:
             if dfs(i):
                 res.append(i)
