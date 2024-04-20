@@ -13,7 +13,13 @@ class Solution:
             if r not in visited:
                 visited[r]=False
                 if r in d:
-                    visited[r]= all(dfs(i) for i in d[r]) 
+                    all_children_visited = True
+                    for i in d[r]:
+                        if not dfs(i):
+                            all_children_visited = False
+                            break
+                    visited[r] = all_children_visited
+                    # visited[r]= all(dfs(i) for i in d[r]) 
             return visited[r]
 
         for i in recipes:
