@@ -2,8 +2,7 @@ class Solution:
     def findFarmland(self, land: List[List[int]]) -> List[List[int]]:
         dir=[[0,1],[0,-1],[1,0],[-1,0]]
         def bfs(r,c):
-            q=deque()
-            q.append((r,c))
+            q=deque([(r,c)])
             maxr,maxc=r,c
             while q:
                 r,c=q.popleft()
