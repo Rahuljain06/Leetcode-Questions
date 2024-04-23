@@ -1,6 +1,5 @@
 class Solution:
     def findLonely(self, nums: List[int]) -> List[int]:
-        nums.sort()
         num=Counter(nums)
         res=[]
         for i in range(len(nums)):
