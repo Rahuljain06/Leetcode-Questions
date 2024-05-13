@@ -21,8 +21,9 @@ class Solution:
         while (csum<target):
             steps+=1
             csum+=steps
-            if csum==target:
-                return steps
+            
+        if csum==target:
+            return steps
         
         
         while (csum-target)%2!=0:
