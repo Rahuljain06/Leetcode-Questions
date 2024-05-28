@@ -1,6 +1,5 @@
 class Solution:
     def checkRecord(self, s: str) -> bool:
-        if len(s)==1:return True
         if s.count("A")>=2:return False
         count=0
         for i in range(1,len(s)):
