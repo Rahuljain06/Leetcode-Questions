@@ -4,7 +4,7 @@ class Solution:
         res=[]
         def backtrack(curr,pos):
             if pos==len(s):
-                res.append(curr[1:])
+                res.append(curr[1:]) # ham yaha par 1 value s esiliye add kar rhe hai jisse starting ka extra space hat jayee..
                 return
             curr+=" "
             for i in range(pos,len(s)):
