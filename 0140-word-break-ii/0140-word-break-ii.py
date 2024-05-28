@@ -11,6 +11,7 @@ class Solution:
             for i in range(pos,len(s)):
                 if s[pos:i+1] in words:
                     backtrack(curr+s[pos:i+1],i+1)
+            return
         backtrack("",0)
         return res
                     
