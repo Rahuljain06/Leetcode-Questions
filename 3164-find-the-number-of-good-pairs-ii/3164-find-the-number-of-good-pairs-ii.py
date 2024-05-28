@@ -21,5 +21,20 @@ class Solution:
                         good_pairs += divisor_count[num // j]
         
         return good_pairs
+
+#In this Approach: we will divide the elements of nums1 by k instead of multiplying the elements of nums2 by k and store in hashmap..Although the approach its pretty similar than above but now we dont have to check the elements of nums1 which doesn't divide by k
+        n = len(nums1)
+        cnt = 0
+        mapi = Counter(nums2)
+        for i in range(n):
+            if nums1[i] % k != 0:
+                continue
+            val = nums1[i] // k
+            for j in range(1, isqrt(val) + 1):
+                if val % j == 0:
+                    cnt += mapi[j]
+                    if j != val // j: # num // j is also a divisor if it's different from j
+                         cnt += mapi[val // j]
+        return cnt
        
                     
