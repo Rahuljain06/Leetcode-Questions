@@ -2,6 +2,7 @@ class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
         words=set(wordDict)
         res=[]
+        @cache
         def backtrack(curr,pos):
             if pos==len(s):
                 res.append(curr[1:]) # ham yaha par 1 value s esiliye add kar rhe hai jisse starting ka extra space hat jayee..
