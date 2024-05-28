@@ -1,5 +1,6 @@
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
+        # Apporach: ham isme wordDict ki list ko set me convert kar denge jisse lookup time O(1) ho jaaye and fir simple s(given string) me loop lagakar ye check karenge ki ye words(set) me hai ya nhi agar hai to waha tak ki value current path me add kar denge and jiss index tak ki string add ki hai uske agla index bactrack function me pass kar denge path ke saath i.e: backtrack(path,i+1)
         words=set(wordDict)
         res=[]
         
