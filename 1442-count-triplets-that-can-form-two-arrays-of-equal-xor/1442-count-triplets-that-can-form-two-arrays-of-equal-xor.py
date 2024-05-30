@@ -2,9 +2,9 @@ class Solution:
     def countTriplets(self, arr: List[int]) -> int:
         # isme basically pehle ham har ek point se ek subarray dhoondenge jiss subarray ka xor 0 aa rha hoga fir uss subarray ki length add kar denge.. kyunki agar tum dekhoge to ki vo aapas me sab ek doosre ko cancel out kar rhe honge... to ham j ko i ke baad se k tak kahi par bhi rakh sakte hai... esiliye hamne count me (k-i) add kiya: for eg
 
-
+#        p1                   p2
 # [5, 6, 2, 3, 3, 5, 3, 2, 5, 3, 8, 9]
-# image
+# Then the subarray looks like =[2, 3, 3, 5, 3, 2, 5, 3]. The XOR of this subarray is 0.
 # If we look at above, the XOR from p1 to p2 will always be 0, because
 
 # 2 will cut 2
