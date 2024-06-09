@@ -3,12 +3,8 @@ class Solution:
         nums = list(set(nums))
         
         nums.sort()
-        
-        cache = {}
-        
+        @cache
         def dp(i, cur):
-            if (i, cur) in cache:
-                return cache[(i, cur)]
             
             if i >= len(nums):
                 return cur
@@ -18,9 +14,7 @@ class Solution:
                 operation = dp(i+1, cur+nums[i])
             else:
                 operation = skip
-            
-            cache[(i, cur)] = max(skip, operation)
-            return cache[(i, cur)]
+            return max(skip, operation)
         
         return dp(0, 0)
        
