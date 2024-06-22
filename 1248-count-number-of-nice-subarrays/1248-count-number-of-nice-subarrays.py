@@ -6,7 +6,7 @@ class Solution:
             for j in range(len(nums)):
                 cnt+= nums[j] % 2!=0
                 while cnt > k:
-                    k += nums[i] % 2
+                    cnt-=nums[i]%2!=0
                     i += 1
                 res += j - i + 1
             return res
