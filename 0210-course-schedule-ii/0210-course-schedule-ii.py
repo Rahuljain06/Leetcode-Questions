@@ -20,7 +20,7 @@ class Solution:
             if crs in noCycle:  return True
             
             checkCycle.add(crs)
-            noCycle.add(crs)
+            
             for pre in preMap[crs]:
                 
                 if not dfs(pre): return False     # if we detect cycle we will directly return False
@@ -28,6 +28,7 @@ class Solution:
             checkCycle.remove(crs) # After visiting all its PreRequsites, we find out there is no cycle present in the current crs and now we can remove it from visted. So, if this course is a preRequiste of some another course then it will not return False
             
             # we are making this crs PreRequisites empty [] because after visting all its preRequisites we noticed there is no cycle present. So,this course can be completed and we don't have to go through the whole process again.
+            noCycle.add(crs)
             
             # Now we will append the crs in the order
             op.append(crs)
