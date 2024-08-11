@@ -1,23 +1,33 @@
+from collections import defaultdict
+
 class Solution:
-    def countGoodNodes(self, e: List[List[int]]) -> int:
-        t = defaultdict(list)
-        n=len(e)+1
-        for u, v in e:
-            t[u].append(v)
-            t[v].append(u)
-        print(t)
-        sz = [1] * n
-        cnt = 0
-        def dfs(nd, p):
-            nonlocal cnt
-            c = []
-            for nbr in t[nd]:
-                if nbr == p:
-                    continue
-                sz[nd] += dfs(nbr, nd)
-                c.append(sz[nbr])
-            if len(set(c)) <= 1:
-                cnt += 1
-            return sz[nd]
-        dfs(0, -1)
-        return cnt
+    def dfs(self, node, parent, g, sb, ans):
+        sb[node] = 1
+        isGoodNode = True
+        f = -1
+        for c in g[node]:
+            if c != parent:
+                cs = self.dfs(c, node, g, sb, ans)
+                if f == -1:
+                    f = cs
+                elif f != cs:
+                    isGoodNode = False
+                sb[node] += sb[c]
+        if isGoodNode:
+            ans[0] += 1
+        return sb[node]
+
+    def countGoodNodes(self, edges):
+        g = defaultdict(list)
+        n = len(edges) + 1
+        for edge in edges:
+            u, v = edge
+            g[u].append(v)
+            g[v].append(u)
+
+        sb = {}
+        ans = [0]
+        self.dfs(0, -1, g, sb, ans)
+
+        return ans[0]
+
