@@ -5,12 +5,11 @@ class Solution:
         for u, v in e:
             t[u].append(v)
             t[v].append(u)
-
-        sz = [0] * n
+        print(t)
+        sz = [1] * n
         cnt = 0
         def dfs(nd, p):
             nonlocal cnt
-            sz[nd] = 1
             c = []
             for nbr in t[nd]:
                 if nbr == p:
